@@ -1,4 +1,3 @@
-
 let tg = window.Telegram.WebApp;
 
 tg.expand();
@@ -8,20 +7,17 @@ tg.MainButton.textColor = "#F55353"; //изменяем цвет текста к
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
 
+tg.MainButton.show();
+
 let submitBtn = document.getElementById("submitBtn");
 let text =  document.getElementById("textDesc");
 
 submitBtn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-    if (tg.MainButton.isVisible){ //если кнопка показана
-        tg.MainButton.hide() //скрываем кнопку
-    }
-    else{ //иначе
-        tg.MainButton.show() //показываем
-    }
+    tg.sendData(text.value);
+    tg.close();
 });
 
 tg.WebApp.onEvent('mainButtonClicked', function(){
-    
+
     tg.sendData(text.value);
-    //при клике на основную кнопку отправляем данные в строковом виде
 });

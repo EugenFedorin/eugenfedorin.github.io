@@ -7,7 +7,7 @@ tg.MainButton.textColor = "#F55353"; //изменяем цвет текста к
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
 
-tg.MainButton.show();
+// tg.MainButton.show();
 
 let submitBtn = document.getElementById("submitBtn");
 let text =  document.getElementById("textDesc");
@@ -18,7 +18,6 @@ submitBtn.addEventListener('click', function(){ //вешаем событие н
 });
 
 tg.WebApp.onEvent('mainButtonClicked', function(){
-
     tg.sendData(text.value);
     tg.close();
 });
